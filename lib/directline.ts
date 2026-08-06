@@ -21,9 +21,9 @@ export class DirectLineClient {
   private token: string | null = null;
 
   constructor(secret?: string) {
-    this.secret = secret || process.env.NEXT_PUBLIC_DIRECT_LINE_SECRET || '';
+    this.secret = secret || process.env.DIRECT_LINE_SECRET || process.env.NEXT_PUBLIC_DIRECT_LINE_SECRET || '';
     if (!this.secret) {
-      throw new Error('NEXT_PUBLIC_DIRECT_LINE_SECRET 값이 필요합니다.');
+      throw new Error('DIRECT_LINE_SECRET 또는 NEXT_PUBLIC_DIRECT_LINE_SECRET 값이 필요합니다.');
     }
   }
 

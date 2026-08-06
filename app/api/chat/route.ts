@@ -8,9 +8,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: '질문을 입력해 주세요.' }, { status: 400 });
     }
 
-    const secret = process.env.NEXT_PUBLIC_DIRECT_LINE_SECRET;
+    const secret = process.env.DIRECT_LINE_SECRET ?? process.env.NEXT_PUBLIC_DIRECT_LINE_SECRET;
     if (!secret) {
-      return NextResponse.json({ error: '서버 설정이 올바르지 않습니다.' }, { status: 500 });
+      return NextResponse.json({ error: '서버 설정이 올바르지 않습니다. 환경 변수를 확인해 주세요.' }, { status: 500 });
     }
 
     const conversationResponse = await fetch('https://directline.botframework.com/v3/directline/conversations', {

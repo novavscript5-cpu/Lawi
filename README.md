@@ -33,8 +33,10 @@ http://localhost:3000
 `.env.local`에 다음 값을 추가합니다.
 
 ```env
-NEXT_PUBLIC_DIRECT_LINE_SECRET=<your_direct_line_secret_here>
+DIRECT_LINE_SECRET=<your_direct_line_secret_here>
 ```
+
+기존에 `NEXT_PUBLIC_DIRECT_LINE_SECRET`로 설정한 환경 변수가 있으면 그대로 두어도 동작합니다.
 
 환경 변수 값은 GitHub에 커밋하지 마세요.
 
